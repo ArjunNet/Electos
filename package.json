@@ -1,0 +1,14 @@
+{
+  "name": "electronapp",
+  "version": "1.0.0",
+  "description": "First Electron App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Ar",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^21.1.0"
+  }
+}

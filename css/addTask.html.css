@@ -1,0 +1,94 @@
+@font-face {
+	font-family: montserrat;
+	src: url(../fonts/Montserrat_var_wght.ttf);
+}
+
+@font-face {
+	font-family: quicksand;
+	src: url(../fonts/Quicksand_var_wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(245, 245, 245);
+    overflow: hidden;
+}
+
+#addTaskPopupCloseBtn {
+    border-radius: 50%;
+    transition: 0.4s;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transform: scale(2.15);
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+#addTaskPopupCloseBtn:hover {
+    cursor: pointer;
+}
+
+#taskContentInput {
+    display: block;
+    width: 50%;
+    margin-top: 200px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid lightsteelblue;
+    font-size: 20px;
+    font-family: "quicksand";
+    color: rgb(47, 47, 47);
+    transition: 0.1s;
+}
+
+#taskContentInput::placeholder {
+    color: lightsteelblue;
+}
+
+#taskContentInput:focus {
+    width: 96%; 
+}
+
+#taskEndDateTimeText {
+    margin-top: 40px;
+    font-family: "montserrat";
+    color: lightsteelblue;
+}
+
+#taskEndDateTimeInput {
+    display: block;
+    background: transparent;
+    color: lightsteelblue;
+    border: 2px solid lightsteelblue;
+    padding: 10px 10px;
+    border-radius: 10px;
+    width: 48%;
+    outline: none;
+    /* border-bottom: lightsteelblue; */
+    margin-top: 8px    ;
+}
+
+#taskImpText {
+    font-family: "montserrat";
+    display: inline-block;
+    color: lightsteelblue;
+    margin-top: 30px;
+    border-bottom: 2px solid lightsteelblue;
+}
+
+#taskImpCheckInput {
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    box-shadow: 0 0 3px lightsteelblue;
+}

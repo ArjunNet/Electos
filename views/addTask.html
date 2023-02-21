@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/addTask.html.css">
+
+    <script src="../scripts/addTaskPopupHandler.js" defer></script>
+    <title>Add a New Task</title>
+</head>
+<body>
+    <section id = "addTaskWindow">
+        <button id = "addTaskPopupCloseBtn" onclick="closePopup()" disabled> <img src="../media/circle-xmark-regular.svg" alt="x"> </button>
+        <center>
+            <input type="text" placeholder="New Task" id = "taskContentInput">
+            <p id = "taskEndDateTimeText">When do you want to finish it by?</p>
+            <input type="datetime-local" id="taskEndDateTimeInput">
+            <p id = "taskImpText">Is it important?</p>
+            <input type="checkbox" id="taskImpCheckInput">
+        </center>
+    </section>
+</body>
+</html>
