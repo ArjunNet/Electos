@@ -14,6 +14,15 @@
 	height: 0;
 }
 
+.hidden {
+	opacity: "0";
+	max-width: 0;
+	min-height: 0;
+	position: absolute;
+	top: 10000;
+	right: 10000;
+}
+
 button {
 	cursor: pointer;
 }
@@ -54,6 +63,7 @@ nav {
 	padding: 20px 0;
 	white-space: nowrap;
 	max-height: 10px;
+	z-index: 5;
 }
 
 nav > .navElement {
@@ -76,12 +86,13 @@ nav > .navHeader::selection {
 	background-color: transparent;
 }
 
-#addTaskButton {
+#addTaskBtn {
 	-webkit-app-region: no-drag;
-	min-width: 12vw;
+	width: 60px;
+	height: 40px;
 	background-color: transparent;
 	border-radius: 8px;
-	padding: 6px 14px;
+	/* padding: 6px 14px; */
 	font-family: quicksand;
 	font-variation-settings: "wght" 475;
 	font-size: 20px;
@@ -90,14 +101,21 @@ nav > .navHeader::selection {
 	right: 1.25vw;
 	bottom: 1.25vh;
 	/* transform: translateY(-50%); */
-	color: rgb(70, 97, 255);
-	border: 2px solid rgb(70, 97, 255);
+	/* color: rgb(70, 97, 255); */
+	color: lightsteelblue;
+	/* border: 2px solid rgb(70, 97, 255); */
+	border: 2px solid lightsteelblue;
 	transition: 0.3s;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
 }
 
-#addTaskButton:hover {
-	background-color: rgb(70, 97, 255);
-	color: white;
+#addTaskBtn:hover {
+	/* background-color: rgb(70, 97, 255); */
+	background-color: lightsteelblue;
+	color: black;
+	box-shadow: 0 0 8px lightsteelblue;
 }
 
 #addTaskInput {
@@ -226,65 +244,38 @@ nav > .sizeButtons > #minimizeWindowButton:hover {
 }
 
 .taskDiv {
-	background: rgb(245, 245, 245);
+	background-color: rgb(245, 245, 245);
 	box-shadow: 0px 0px 8px lightblue;
-	color: purple;
-	height: 30px;
+	/* color: purple; */
 	border-radius: 8px;
 	/* border: 2px solid #AA96DA; */
 	margin-bottom: 10px;
-	padding:  4px 8px;
-	width: 320px;
-	min-height: 20vh;
+	/* padding:  4px 8px; */
+	width: 340px;
+	min-height: 180px;
 	display: inline-block;
 	margin: 30px;
-	padding: 0;
 	white-space: pre-wrap;
 	vertical-align: top;
 	transition: 0.1s;
+	position: relative;
 }
 
 .taskDiv:hover {
-	transform: scale(1.15);
+	transform: scaleX(1.07) scaleY(1.07);
 }
 
 .taskDiv > h2 {
 	font-size: 18px;
 	font-family: "quicksand";
 	font-weight: 100;
+	margin: 0 10px;
 }
 
 .taskDiv > button {
 	background: transparent;
 	outline: none;
 	border: none;
-}
-
-.taskDeleteBtn {
-	color: rgb(55, 212, 55);
-	transition: 0.1s;
-	margin-left: 6px;
-	font-size: 20px;
-}
-
-.taskDeleteBtn:hover {
-	color: lightskyblue;
-	/* border-bottom: 2px solid white; */
-	/* transform-origin: left;	 */
-}
-
-.taskEditBtn {
-	color: white;	
-	transition: 0.1s;
-	margin-left: 17vw;
-	/* font-family: "montserrat" */
-	opacity: 0;
-	position: absolute;
-	/* font-size: 30px; */
-}
-
-.taskEditBtn:hover {
-	border-bottom: 2px solid whitesmoke;
 }
 
 .addTaskPopup {
@@ -311,3 +302,76 @@ nav > .sizeButtons > #minimizeWindowButton:hover {
 	outline: none;
 	border: none;
 }
+
+.taskFunctionsDiv {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	/* height: 100%; */
+}
+
+.taskFunctionsDiv > button {
+	width: 50%;
+	display: inline-block;
+	height: 30px;
+	vertical-align: bottom;
+	outline: none;
+	font-family: "quicksand";
+	/* font-variant: small-caps; */
+}
+
+.taskDeleteBtn {
+	color: white;
+	transition: 0.1s;
+	/* position: relative; */
+	/* left: 300px; */
+	/* top: 140px; */
+	height: 10px;
+	width: 10px;
+	/* border: 2px solid red; */
+	background-color: lightsteelblue;
+	border: 2px solid lightsteelblue;
+	/* font-size: 20px; */
+	/* border-top-left-radius: 10px; */
+	border-bottom-left-radius: 10px;
+}
+
+.taskDeleteBtn:hover {
+	color: lightskyblue;
+	/* border-bottom: 2px solid white; */
+	/* transform-origin: left;	 */
+	background-color: transparent;
+	color: lightsteelblue;
+}
+
+.taskEditBtn {
+	background-color: rgb(75, 204, 75);
+	transition: 0.1s;
+	/* border-top-right-radius: 10px; */
+	border-bottom-right-radius: 10px;
+	border: 2px solid rgb(75, 204, 75);
+	color: white;
+}
+
+.taskEditBtn:hover {
+	background-color: white;
+	color: rgb(75, 204, 75);
+}
+
+.dateTimeDiv {
+	background-color: rgb(180, 180, 180);
+	color: black;
+	border-top-left-radius : 8px;
+	border-top-right-radius : 8px;
+
+	font-family: "montserrat";
+	font-size: 12px;
+	padding: 4px;
+	text-align: center;
+}
+/* 
+.importantTaskBox {
+	box-shadow: 0 0 10px goldenrod !important;
+} */
